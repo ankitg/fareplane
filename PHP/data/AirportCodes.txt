@@ -1,0 +1,17 @@
+A man's got to have code.
+Won't change how mustard tastes.
+
+q="love";
+results=`curl -A "Macross" "http://translate.google.com/translate_a/t?client=t&sl=en&tl=ja&ie=UTF-8&q=$q"`;
+echo "$results";
+echo "$results" | grep -P "[\x80-\xFF]";
+
+
+
+q="polo"; results=`curl -A "Macross" "http://translate.google.com/translate_a/t?client=t&sl=en&tl=ja&ie=UTF-8&q=$q"`; echo "$results" | awk -F'"' '{ print $2, $4 }'
+
+
+q="w"; echo "$q" | awk 'l=0; { if ( /^[^A-Za-z0-9]/ ) $l="ja"; else $l="en"; } { print $l }'
+
+
+
